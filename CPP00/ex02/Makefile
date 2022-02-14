@@ -6,18 +6,17 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/02/14 03:48:49 by emaugale         ###   ########.fr        #
+#    Updated: 2022/02/14 04:07:13 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		=	Phonebook
 
-SRCS 		=	phonebook.cpp		\
-				Contact.cpp			\
-				main.cpp			\
+SRCS 		=	test.cpp		\
+				Account.cpp		\
 
 OBJS		=		$(SRCS:.cpp=.o)
-INCLUDE		= 	./	
+INCLUDE		= 	./
 AR		=		#ar rcs
 RM		=		rm -f
 CC		=		c++
