@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 09:55:18 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/14 03:51:35 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/14 20:10:53 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	Contact::list(void) const
 {
 	if (this->_firstName.compare("") == 0)
 		return ;
-	for (int i = 0; i < 10; i++)
+	std::cout<< "|";
+	for (int i = 0; i < 9; i++)
 		std::cout << " ";
 	std::cout << static_cast<int16_t>(_Index) << "|";
 	if (_firstName.size() < 10)
@@ -59,6 +60,7 @@ void	Contact::list(void) const
 	else
 		std::cout << this->_nickName.substr(0, 9) << ".|";
 	std::cout << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
 }
 
 bool	Contact::isEmpty(void)
