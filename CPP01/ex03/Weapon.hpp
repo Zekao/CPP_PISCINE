@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:22:05 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/15 10:24:41 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:38:27 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,13 @@
 
 class Weapon
 {
-private:
-	std::string _type;
-public:
-	Weapon(std::string weapon);
-	~Weapon();
-	std::string & getType();
-	void setType(std::string newType);
+	private:
+		std::string _type;
+	public:
+		Weapon(std::string type);
+		~Weapon();
+		std::string & getType();
+		void setType(std::string type);
 };
-
-std::string & Weapon::getType()
-{
-	return (this->_type);
-}
-
-void	Weapon::setType(std::string newType)
-{
-	_type = newType;
-}
-Weapon::Weapon(std::string weapon)
-{
-	this->_type = weapon;
-}
-
-Weapon::~Weapon()
-{
-}
-
 
 #endif

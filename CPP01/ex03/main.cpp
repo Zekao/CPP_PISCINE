@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:21:49 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/15 10:22:54 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/16 00:16:37 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,33 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main()
+int	main()
 {
-{
-Weapon club = Weapon("crude spiked club");
-HumanA bob("Bob", club);
-bob.attack();
-club.setType("some other type of club");
-bob.attack();
-}
-{
-Weapon club = Weapon("crude spiked club");
-HumanB jim("Jim");
-jim.setWeapon(club);
-jim.attack();
-club.setType("some other type of club");
-jim.attack();
-}
-return 0;
+	std::string	name;
+	std::string	weapon;
+	std::cout << "Please enter a name Human A : ";
+	if (!std::getline(std::cin, name))
+		exit (1);
+	std::cout << "Please enter a name for the weapon : ";
+	if (!std::getline(std::cin, weapon))
+		exit (1);
+	Weapon weapon1 = Weapon(weapon);
+	HumanA number1(name, weapon1);
+	number1.attack();
+	std::cout << "Please enter a name Human B: ";
+	if (!std::getline(std::cin, name))
+		exit (1);
+	std::cout << "Please enter a name for the weapon : ";
+	if (!std::getline(std::cin, weapon))
+		exit (1);
+	Weapon weapon2 = Weapon(weapon);
+	HumanA number2(name, weapon2);
+	number2.attack();
+	std::cout << "Please enter a new name for the weapon : ";
+	if (!std::getline(std::cin, weapon))
+		exit (1);
+	weapon2.setType(weapon);
+	number2.attack();
+	return (0);
+		
 }

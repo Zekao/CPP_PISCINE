@@ -6,11 +6,11 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/02/15 10:09:37 by emaugale         ###   ########.fr        #
+#    Updated: 2022/02/15 20:49:54 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	BraiiiiiiinnnzzzZ
+NAME 		=	BraiiiiiiinnnzzzZ_2
 
 SRCS 		=	Zombie.cpp		\
 				ZombieHorde.cpp	\
