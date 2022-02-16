@@ -30,12 +30,13 @@ int main(int argc, char **argv)
 
 	if (!input)
 		return (std::cerr << "Couldn't open \033[1;31m" << argv[1] << "\033[m" << std::endl, 1);
-	std::string line;
+	std::string 	line;
 	std::ofstream	output(name);
 	if (to_search == to_replace)
 	{
 		while(std::getline(input, line))
-			output << line;
+			output << line << std::endl;
+		output.close();
 		return (0);
 	}
 	while(std::getline(input, line))
@@ -53,8 +54,8 @@ int main(int argc, char **argv)
 			else
 				break;
 		}
-		output << line;
+		output << line << std::endl;
 	}
-	output << std::endl;
+	output.close();
 	std::cout << "\033[1;32m Correctly replaced content in the file\033[m" << std::endl;
 }
