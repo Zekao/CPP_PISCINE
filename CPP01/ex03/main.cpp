@@ -6,13 +6,15 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:21:49 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/16 00:16:37 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:26:28 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include <unistd.h>
+#include <stdlib.h>
 
 int	main()
 {
@@ -42,5 +44,5 @@ int	main()
 	weapon2.setType(weapon);
 	number2.attack();
 	return (0);
-		
+
 }

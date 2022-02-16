@@ -6,11 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 06:46:36 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/15 08:51:31 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:25:30 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <stdlib.h>
+#include <unistd.h>
 
 int	main()
 {

@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	if (!input)
 		return (std::cerr << "Couldn't open \033[1;31m" << argv[1] << "\033[m" << std::endl, 1);
 	std::string 	line;
-	std::ofstream	output(name);
+	std::ofstream	output(name.c_str());
 	if (to_search == to_replace)
 	{
 		while(std::getline(input, line))

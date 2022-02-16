@@ -6,7 +6,7 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/02/15 07:05:43 by emaugale         ###   ########.fr        #
+#    Updated: 2022/02/16 10:13:39 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,15 @@ SRCS 		=	Zombie.cpp		\
 				main.cpp		\
 
 OBJS		=		$(SRCS:.cpp=.o)
+DEPS		=		$(SRCS:.cpp=.d)
 INCLUDE		= 		include
 AR		=		#ar rcs
 RM		=		rm -f
 CC		=		c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-%.o:				%.c
-	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
+%.o:				%.cpp
+	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@ -I $(INCLUDE)
 
 all:	$(NAME)
 
@@ -47,7 +48,7 @@ $(NAME):		$(OBJS)
 	@echo "Bonne correction!"
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(DEPS)
 	@echo "\033[1;31m ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
 	@echo "⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀"
 	@echo "⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀"
@@ -58,7 +59,7 @@ clean:
 	@echo "\033[1;1;32m♻️  Objects have been \033[5;1;31mdeleted\033[m ♻️"
 
 fclean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(DEPS)
 	@$(RM) $(NAME)
 	@echo -n "\033[0;31m⠀"
 	@echo "UNINSTALLING LEAGUE OF LEGENDS"
@@ -101,4 +102,5 @@ wait:
 	@echo -n "\r 100% [\033[0;32m██████████████████████████\033[m]\033[0;32m compilation terminee ✓\n\033[0;m"
 re:		fclean all
 
+-include $(DEPS)
 .PHONY: all clean fclean re

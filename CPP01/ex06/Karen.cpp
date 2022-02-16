@@ -30,7 +30,6 @@ void	Karen::complain(std::string level)
 
 	for(int i = 0; i < 4; i++)
 	{
-		void (Karen::*selectedLevel)(void) = select[i];
 		if (level == complainLevel[i])
 			(this->*select[i])();
 	}
