@@ -23,6 +23,6 @@ int	main(void)
 	std::cout << "\033[1;32m reference address : \033[m" << &ref << std::endl;
 
 	std::cout << "\033[1;34m string : \033[m" << str << std::endl;
-	std::cout << "\033[1;33m pointer : \033[m" << ptr << std::endl;
+	std::cout << "\033[1;33m pointer : \033[m" << *ptr << std::endl;
 	std::cout << "\033[1;32m reference : \033[m" << ref << std::endl;
 }
