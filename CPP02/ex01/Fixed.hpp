@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:25:48 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/19 14:10:24 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/20 00:45:11 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 	private:
-		int		_value;
-		int		_bits;
+		int					_rawBits;
+		static const int	_bits = 8;
 	public:
 		Fixed();
 		Fixed(const float value);
