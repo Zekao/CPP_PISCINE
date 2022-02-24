@@ -6,11 +6,11 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/02/22 23:45:41 by emaugale         ###   ########.fr        #
+#    Updated: 2022/02/24 02:51:15 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	canon
+NAME 		=	ClapTrap
 
 SRCS 		=	ClapTrap.cpp		\
 				main.cpp			\

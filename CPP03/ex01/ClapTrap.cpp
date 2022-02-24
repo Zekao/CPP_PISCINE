@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:00:44 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/23 17:03:46 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/24 02:56:25 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Constructor called" << std::endl;
-	this->_name = "test";
-	this->_hitPoints = 10;
-	this->_energyPoints = 10;
-	this->_attackDamage = 10;
+	std::cout << "ClapTrap Constructor called" << std::endl;
+	this->_name = "Robot";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ClapTrap::~ClapTrap()
