@@ -6,12 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:45:50 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/23 22:38:11 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:21:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
 int	main(void)
 {
 	ScavTrap test("Robot");
@@ -20,6 +21,7 @@ int	main(void)
 	test.attack("test");
 	std::cout << "\033[1;31mEnergy level of my claptrap : \033[m" << test.getEnergy() << std::endl;
 	test.guardGate();
+	test.attack("test2");
 	test.beRepaired(35);
 	test.setEnergy(1);
 	test.beRepaired(600);

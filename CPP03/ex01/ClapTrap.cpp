@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:00:44 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/24 02:56:25 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:27:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap Constructor called" << std::endl;
-	this->_name = "Robot";
+	this->_name = "name";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
+
+ClapTrap::ClapTrap(std::string const &name)
+{
+	std::cout << "ClapTrap Constructor called" << std::endl;
+	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -35,21 +44,21 @@ ClapTrap::ClapTrap(ClapTrap &a)
 	this->_attackDamage = a.getAttack();
 }
 
-std::string	ClapTrap::getName()
+std::string	ClapTrap::getName() const
 {
 	return(this->_name);
 }
-int		ClapTrap::getAttack()
+int		ClapTrap::getAttack() const
 {
 	return(this->_attackDamage);
 }
 
-int		ClapTrap::getEnergy()
+int		ClapTrap::getEnergy() const
 {
 	return(this->_energyPoints);
 }
 
-int		ClapTrap::getHP()
+int		ClapTrap::getHP() const
 {
 	return(this->_hitPoints);
 }

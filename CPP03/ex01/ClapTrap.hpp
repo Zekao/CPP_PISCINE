@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 22:58:11 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/23 21:44:01 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:27:56 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ class ClapTrap
 
 	public:
 		ClapTrap();
+		ClapTrap(std::string const &name);
 		ClapTrap(ClapTrap &a);
 		~ClapTrap();
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		std::string	getName();
-		int			getEnergy();
-		int			getAttack();
-		int 		getHP();
+		std::string	getName() const;
+		int			getEnergy() const;
+		int			getAttack() const;
+		int 		getHP() const;
 		void		setDamage(int amount);
 		void		setHP(int amount);
 		void		setEnergy(int amount);

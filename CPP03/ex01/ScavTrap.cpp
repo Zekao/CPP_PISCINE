@@ -6,13 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:46:01 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/24 02:55:39 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:25:25 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string const &name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
 	this->_name = name;
