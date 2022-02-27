@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:00:44 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/25 10:27:50 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/27 01:48:36 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap Constructor called" << std::endl;
-	this->_name = "name";
+	this->_name = "e";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -42,6 +42,16 @@ ClapTrap::ClapTrap(ClapTrap &a)
 	this->_hitPoints = a.getHP();
 	this->_energyPoints = a.getEnergy();
 	this->_attackDamage = a.getAttack();
+}
+
+ClapTrap & ClapTrap::operator=( ClapTrap const & value )
+{
+        std::cout << "Copy assignement operator called" << std::endl;
+		this->_name = value.getName();
+		this->_hitPoints = value.getHP();
+		this->_energyPoints = value.getEnergy();
+		this->_attackDamage = value.getAttack();
+        return (*this);
 }
 
 std::string	ClapTrap::getName() const

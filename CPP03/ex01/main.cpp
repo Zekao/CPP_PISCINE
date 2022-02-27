@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:45:50 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/25 10:21:50 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/02/27 01:45:46 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 int	main(void)
 {
-	ScavTrap test("Robot");
+	ScavTrap test("yo");
+	ScavTrap yo("test");
+	yo = test;
 	std::cout << "Amount of life of ScavTrap : " << test.getHP() << std::endl;
 	std::cout << "\033[1;31mEnergy level of my claptrap : \033[m" << test.getEnergy() << std::endl;
 	test.attack("test");
+	yo.attack("test");
 	std::cout << "\033[1;31mEnergy level of my claptrap : \033[m" << test.getEnergy() << std::endl;
 	test.guardGate();
 	test.attack("test2");
