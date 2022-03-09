@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 22:58:11 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/27 01:43:20 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/09 02:57:06 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
 		int				_hitPoints;
 		int				_energyPoints;

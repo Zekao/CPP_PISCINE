@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:00:44 by emaugale          #+#    #+#             */
-/*   Updated: 2022/02/27 01:48:36 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/09 04:06:33 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap Constructor called" << std::endl;
-	this->_name = "e";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -32,7 +31,7 @@ ClapTrap::ClapTrap(std::string const &name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\033[0;31mDestructor called\033[m" << std::endl;
+	std::cout << "\033[0;31mClapTrap Destructor called\033[m" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &a)
@@ -105,7 +104,10 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if ( _energyPoints <= 0)
+	{
+		std::cout << "\033[1;31mno enough energy to be repaired.\033[m" << std::endl;
 		return ;
+	}
 	std::cout << "\033[1;32mClapTrap " << getName() << " regained " << amount << " hp \033[m" << std::endl;
 	_hitPoints += amount;
 	setEnergy(_energyPoints - 1);

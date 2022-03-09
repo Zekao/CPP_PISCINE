@@ -6,7 +6,7 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/02/24 02:51:09 by emaugale         ###   ########.fr        #
+#    Updated: 2022/03/09 02:46:05 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ SRCS 		=	ClapTrap.cpp		\
 OBJS		=		$(SRCS:.cpp=.o)
 DEPS		=		$(SRCS:.cpp=.d)
 INCLUDE		= 		include
-AR		=		#ar rcs
-RM		=		rm -f
-CC		=		c++
+AR			=		#ar rcs
+RM			=		rm -f
+CC			=		c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 %.o:				%.cpp
