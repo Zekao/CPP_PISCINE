@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:46:01 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 04:09:17 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/09 05:02:19 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ void	ScavTrap::attack(const std::string &target)
 {
 	std::cout << "\033[0;36mScavTrap " << getName() << " attacked " << target << "\033[m" <<std::endl;
 	setEnergy(_energyPoints - 1);
+}
+
+ScavTrap & ScavTrap::operator=( ScavTrap const & value )
+{
+        std::cout << "Copy assignement operator called" << std::endl;
+		this->_name = value.getName();
+		this->_hitPoints = value.getHP();
+		this->_energyPoints = value.getEnergy();
+		this->_attackDamage = value.getAttack();
+        return (*this);
 }
