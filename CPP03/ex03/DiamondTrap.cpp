@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:07:53 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/10 14:57:29 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:54:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap()
 {
     std::cout << "DiamontTrap default constructor called" << std::endl;
 	this->_hitPoints = FragTrap::_hitPoints;
@@ -34,7 +34,7 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamontTrap destructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
 {
     std::cout << "DiamontTrap constructor called" << std::endl;
 	this->_name = name;

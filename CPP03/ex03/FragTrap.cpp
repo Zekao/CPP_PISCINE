@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:13:56 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/10 06:02:15 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:57:02 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ FragTrap::FragTrap() : ClapTrap()
 {
     std::cout << "FragTrap Constructor called" << std::endl;
     this->_attackDamage = 30;
-    this->_energyPoints = 100;
+    if (!_energyPoints)
+        this->_energyPoints = 100;
     this->_hitPoints = 100;
 }
 
@@ -25,7 +26,8 @@ FragTrap::FragTrap(std::string const &name)
     std::cout << "FragTrap Constructor called" << std::endl;
 	this->_name = name;
     this->_attackDamage = 30;
-    this->_energyPoints = 100;
+    if (!_energyPoints)
+        this->_energyPoints = 100;
     this->_hitPoints = 100;
 }
 
@@ -34,7 +36,8 @@ FragTrap::FragTrap(FragTrap &a)
     std::cout << "FragTrap copy Constructor called" << std::endl;
 	this->_name = a.getName();
 	this->_hitPoints = a.getEnergy();
-	this->_energyPoints = a.getAttack();
+    if (!_energyPoints)
+	    this->_energyPoints = a.getAttack();
 	this->_attackDamage = a.getHP();
 }
 
