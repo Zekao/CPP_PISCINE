@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:42:56 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/10 04:44:17 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 05:36:49 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 
 class ScavTrap : public virtual ClapTrap
 {
-	private:
-		
-	public:
+	protected:
 		ScavTrap();
+	public:
 		ScavTrap(std::string const &name);
 		ScavTrap(ScavTrap &a);
 		~ScavTrap();

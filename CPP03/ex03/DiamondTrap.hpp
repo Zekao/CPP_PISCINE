@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:07:51 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/10 04:44:47 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 05:48:38 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap(DiamondTrap &a);
 		~DiamondTrap();
 		void whoAmI();
+		void attack(const std::string & target);
 		DiamondTrap & operator = ( DiamondTrap const & value );
 
 };
