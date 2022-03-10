@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:13:56 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 04:49:36 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:44:03 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ FragTrap & FragTrap::operator=( FragTrap const & value )
 		this->_attackDamage = value.getAttack();
         return (*this);
 }
-

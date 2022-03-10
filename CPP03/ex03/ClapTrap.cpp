@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:00:44 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 04:39:26 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:42:34 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int		ClapTrap::getEnergy() const
 int		ClapTrap::getHP() const
 {
 	return(this->_hitPoints);
+}
+
+void	ClapTrap::setName(const std::string name)
+{
+	this->_name = name;
 }
 
 void	ClapTrap::setDamage(int amount)

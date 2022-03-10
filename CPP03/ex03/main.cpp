@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:45:50 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 06:22:43 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:45:53 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main(void)
 {
 	// ClapTrap	test0("bee");
-	DiamondTrap test("roger");
+	DiamondTrap test("Zer0");
 	std::cout << "=========================" << std::endl;
 	std::cout << "HP (from FragTrap): " << test.getHP() << std::endl;
 	std::cout << "Energy (from ScavTrap): " << test.getEnergy() << std::endl;

@@ -6,15 +6,16 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:07:53 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 06:51:58 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:44:30 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+#include "ClapTrap.hpp"
 
 DiamondTrap::DiamondTrap()
 {
-    std::cout << "DiamontTrap constructor called" << std::endl;
+    std::cout << "DiamontTrap default constructor called" << std::endl;
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
@@ -28,7 +29,6 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(std::string const &name)
 {
     std::cout << "DiamontTrap constructor called" << std::endl;
-	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
@@ -54,5 +54,5 @@ DiamondTrap & DiamondTrap::operator=( DiamondTrap const & value )
 void DiamondTrap::whoAmI()
 {
 	std::cout << " Name : " << _name;
-	std::cout << " ClapTrap name :" << _name;
+	std::cout << " ClapTrap name :" << ClapTrap::_name << std::endl;
 }

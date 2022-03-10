@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:07:51 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 06:52:12 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:44:47 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
-private:
-    std::string _name;
-    DiamondTrap();
-public:
-    ~DiamondTrap();
-    DiamondTrap(std::string const &name);
-    DiamondTrap(DiamondTrap &a);
-    void whoAmI();
-
-	DiamondTrap & operator = ( DiamondTrap const & value );
+	private:
+		std::string _name;
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string const &name);
+		DiamondTrap(DiamondTrap &a);
+		~DiamondTrap();
+		void whoAmI();
+		DiamondTrap & operator = ( DiamondTrap const & value );
 
 };
 

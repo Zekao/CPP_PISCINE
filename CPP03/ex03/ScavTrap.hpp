@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:42:56 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 04:46:16 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:44:17 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	private:
 		

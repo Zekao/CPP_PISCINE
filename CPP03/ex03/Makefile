@@ -6,7 +6,7 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/03/09 06:54:39 by emaugale         ###   ########.fr        #
+#    Updated: 2022/03/10 04:46:16 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ DEPS		=		$(SRCS:.cpp=.d)
 INCLUDE		= 		include
 AR			=		#ar rcs
 RM			=		rm -f
-CC			=		c++
+CC			=		clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 %.o:				%.cpp

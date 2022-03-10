@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:13:26 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/09 06:49:39 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/10 04:43:49 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap : virtual public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
-    private:
-    
-    public:
+    protected:
         FragTrap();
+    public:
         FragTrap(std::string const &name);
         FragTrap(FragTrap &a);
         ~FragTrap();
         void highFivesGuys(void) const;
 		FragTrap & operator = ( FragTrap const & value );
 };
+
 
 #endif
