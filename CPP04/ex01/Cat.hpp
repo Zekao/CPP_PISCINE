@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 13:22:11 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/13 22:01:03 by emaugale         ###   ########.fr       */
+/*   Created: 2022/03/11 13:06:40 by emaugale          #+#    #+#             */
+/*   Updated: 2022/03/13 22:10:02 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-Cat::Cat()
-{
-    std::cout << "Default cat constructor called" << std::endl;
-    Animal::_type = "Cat";
-}
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-Cat::~Cat()
+class Cat : public Animal
 {
-    std::cout << "Cat destructor called" << std::endl;
-}
+	private:
+		Brain *_brain;
+		/* data */
+	public:
+		Cat();
+		Cat(std::string name);
+		Cat(Cat &copy);
+		~Cat();
+        Brain *getBrain(void) const;
+		void virtual makeSound(void) const;
+};
 
-Cat::Cat(Cat &copy)
-{
-    std::cout << "Cat copy constructor called" << std::endl;
-    *this = copy;
-}
 
-void Cat::makeSound(void) const
-{
-	std::cout << "miaou" << std::endl;
-}
+#endif

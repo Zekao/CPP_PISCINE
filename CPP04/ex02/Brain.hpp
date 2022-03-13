@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 13:22:11 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/13 22:01:03 by emaugale         ###   ########.fr       */
+/*   Created: 2022/03/13 15:15:10 by emaugale          #+#    #+#             */
+/*   Updated: 2022/03/13 21:31:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <iostream>
+# include <string>
+// # include "Animal.hpp"
 
-Cat::Cat()
+class Brain
 {
-    std::cout << "Default cat constructor called" << std::endl;
-    Animal::_type = "Cat";
-}
+    private:
+        std::string _ideas[100];
+    public:
+        Brain();
+        Brain(Brain &copy);
+        ~Brain();
+		Brain & operator = ( Brain const & value );
+        std::string getIdeas(int i) const;
+        void setIdeas(std::string content, int i);
 
-Cat::~Cat()
-{
-    std::cout << "Cat destructor called" << std::endl;
-}
+};
 
-Cat::Cat(Cat &copy)
-{
-    std::cout << "Cat copy constructor called" << std::endl;
-    *this = copy;
-}
-
-void Cat::makeSound(void) const
-{
-	std::cout << "miaou" << std::endl;
-}
+#endif
