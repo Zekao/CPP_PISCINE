@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 03:00:27 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/14 03:27:26 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:24:37 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FORM_HPP
 
 # include <iostream>
+# include "Bureaucrat.hpp"
 class Form
 {
 	private:
@@ -27,7 +28,7 @@ class Form
 				
 				virtual const char *what() const throw()
 				{
-					return ("grade is too high");
+					return (" couldn't sign form because grade is too high");
 				}
 		};
 		class GradeTooLowException : public std::exception
@@ -36,24 +37,26 @@ class Form
 				
 				virtual const char *what() const throw()
 				{
-					return ("grade is too low");
+					return(" couldn't sign form because grade is too low");
 				}
 		};
 
 	public:
+		Form(std::string name);
 		Form(std::string name, bool isSigned, int gradeSign, int gradeExec);
 		~Form();
-		void beSigned(void);
+		void beSigned(Bureaucrat bur);
 		/* GETTERS */
 		
 		std::string getName(void) const;
-		bool getSigned(void) const;
+		// bool getSigned(void) const;
 		int getGradeSign(void) const;
 		int getGradeExec(void) const;
-
+		bool getSignStatus(void) const;
 		/* SETTERS */
 		void	setSigned(bool i);
 };
 
+std::ostream & operator<<(std::ostream & out, Form const & value);
 
 #endif

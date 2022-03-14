@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:52:20 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/14 02:59:42 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/14 15:43:01 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int main(void)
 	std::cout << "\033[1;31m Creating a Bureaucrat\033[m" << std::endl;
 	std::cout << "=================================" << std::endl;
 	Bureaucrat Br("Smith");
-	
 	std::cout << "=================================" << std::endl;
 	std::cout << "\033[1;32m Changing his grade\033[m" << std::endl;
 	std::cout << "=================================" << std::endl;
