@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 03:10:13 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:41:02 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 00:40:37 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool Form::getSignStatus(void) const
 	return (this->_isSigned);
 }
 
-void Form::beSigned(Bureaucrat Bur)
+void Form::beSigned(Bureaucrat const & Bur)
 {
 	if  (Bur.getGrade() > this->_gradeSign)
 	{

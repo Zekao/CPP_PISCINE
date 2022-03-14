@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 03:00:27 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:41:23 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 00:45:10 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -45,16 +48,17 @@ class Form
 		Form(std::string name);
 		Form(Form &copy);
 		Form(std::string name, bool isSigned, int gradeSign, int gradeExec);
-		~Form();
-		void beSigned(Bureaucrat bur);
+		virtual ~Form();
+		void beSigned(Bureaucrat const & bur);
 		/* GETTERS */
 		
 		std::string getName(void) const;
-		// bool getSigned(void) const;
+		bool getSigned(void) const;
 		int getGradeSign(void) const;
 		int getGradeExec(void) const;
-		Form & operator = ( Form const & value );
 		bool getSignStatus(void) const;
+		Form & operator = ( Form const & value );
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 		/* SETTERS */
 		void	setSigned(bool i);
 };
