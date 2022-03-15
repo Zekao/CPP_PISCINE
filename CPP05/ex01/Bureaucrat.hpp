@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:19:13 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/14 02:58:36 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:38:00 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,24 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
 	private:
 		std::string _name;
 		int	_grade;
+		class SignException : public std::exception
+		{
+			public :
+			 
+			virtual const char *what() const throw()
+			{
+				return ("bureaucrat couldn't sign because grade is insuffisent");
+			}
+		};
 		class GradeTooHighException : public std::exception
 		{
 			public :
@@ -48,6 +60,7 @@ class Bureaucrat
 		std::string getName(void) const;
 		int	getGrade(void) const;
 		void setGrade(int size);
+		void	signForm(Form & Form);
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 };

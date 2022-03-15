@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 03:10:13 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:40:37 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:18:13 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ Form::Form(std::string name, bool isSigned, int gradeSign, int gradeExec) : _nam
 Form & Form::operator=( Form const & value )
 {
 	std::cout << "Copy assignement operator called" << std::endl;
-	this->_isSigned = value.getSignStatus();
+	if (this != &value)
+		this->_isSigned = value.getSignStatus();
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:52:20 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:54:21 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:38:12 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main(void)
 		std::cout << "\033[1;33m Trying to sign form\033[m" << std::endl;
 		std::cout << "=================================" << std::endl;
 
-		Br.signForm(&test);
-		Br.signForm(&test2);
-		Br.signForm(&test3);
+		Br.signForm(test);
+		Br.signForm(test2);
+		Br.signForm(test3);
 		
 		std::cout << "=================================" << std::endl;
 		std::cout << "\033[1;33m Trying to execute Robotomy\033[m" << std::endl;

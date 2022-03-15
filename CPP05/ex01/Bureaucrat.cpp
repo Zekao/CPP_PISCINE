@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:19:46 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/14 02:58:11 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:50:17 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 Bureaucrat::Bureaucrat()
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
+	this->_grade = 0;
 }
 
 Bureaucrat::Bureaucrat(std::string name)
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 	this->_name = name;
+	this->_grade = 0;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy)
@@ -80,6 +82,27 @@ void	Bureaucrat::decrementGrade(void)
 	{
 		_grade--;
 		throw Bureaucrat::GradeTooLowException();
+	}
+}
+
+
+void Bureaucrat::signForm(Form & Form)
+{
+	if (Form.getGradeExec() < 1 || Form.getGradeExec() > 150)
+		throw SignException();
+	else if (Form.getGradeSign() < 1 || Form.getGradeSign() > 150)
+		throw SignException();
+	else if (Form.getSignStatus() == true)
+		std::cout << this->_name << " signed " << Form.getName() << std::endl;
+	else if (Form.getGradeSign() > this->_grade)
+	{
+		Form.setSigned(true);
+		std::cout << this->_name << " signed " << Form.getName() << std::endl;
+	}
+	else
+	{
+		std::cout << "Grade : " << Form.getGradeSign() << std::endl;
+		throw SignException();
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:39:49 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:54:30 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:41:56 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("", false, 145, 137)
 	std::cout << "Shrubbery default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form("", false, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, false, 145, 137)
 {
 	this->_target = name;
 	std::cout << "Shrubbery default constructor called" << std::endl;

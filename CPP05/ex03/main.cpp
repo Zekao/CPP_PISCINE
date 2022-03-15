@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:52:20 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:54:21 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:24:00 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,42 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
+	
+	
 	std::cout << "=================================" << std::endl;
-	std::cout << "\033[1;32m Creating a Bureaucrat\033[m" << std::endl;
+	std::cout << "\033[1;32m creating an intern\033[m" << std::endl;
 	std::cout << "=================================" << std::endl;
-	Bureaucrat Br("Smith");
-	RobotomyRequestForm test("Blender");
-	ShrubberyCreationForm test2("TrivialPursuit");
-	PresidentialPardonForm test3("Michel");
+	Intern		intrn;
+	Bureaucrat	test("test");
+	Form		*form;
+
+	std::cout << "=================================" << std::endl;
+	std::cout << "\033[1;33m creating different forms\033[m" << std::endl;
+	std::cout << "=================================" << std::endl;
 	try
 	{
-		Br.setGrade(2);
-		std::cout << "=================================" << std::endl;
-		std::cout << "\033[1;33m Trying to sign form\033[m" << std::endl;
-		std::cout << "=================================" << std::endl;
-
-		Br.signForm(&test);
-		Br.signForm(&test2);
-		Br.signForm(&test3);
-		
-		std::cout << "=================================" << std::endl;
-		std::cout << "\033[1;33m Trying to execute Robotomy\033[m" << std::endl;
-		std::cout << "=================================" << std::endl;
-		
-		test.execute(Br);
-		std::cout << "=================================" << std::endl;
-		std::cout << "\033[1;33m Trying to execute Shrubbery\033[m" << std::endl;
-		std::cout << "=================================" << std::endl;
-		test2.execute(Br);
-		std::cout << "=================================" << std::endl;
-		std::cout << "\033[1;33m Trying to execute Presidential \033[m" << std::endl;
-		std::cout << "=================================" << std::endl;
-		
-		test3.execute(Br);
+		form = intrn.makeForm("robotomy request", " Terry");
+		if (form)
+			delete form;
+		form = intrn.makeForm("presidential pardon", " Jack");
+		if (form)
+			delete form;
+		form = intrn.makeForm("shrubbery creation", " Clap");
+		if (form)
+			delete form;
+		form = intrn.makeForm("sajkdhajk sdhkjdhas jkdakjd ", " jsp");
+		if (form)
+			delete form;
 	}
 	catch (std::exception const &e)
 	{
 		std::cout << "=================================" << std::endl;
 		std::cout << "\033[1;31m EXCEPTION CATCHED\033[m" << std::endl;
 		std::cout << "=================================" << std::endl;
-		std::cout << Br.getName();
 		std::cerr << e.what() << std::endl;
 	}
 }

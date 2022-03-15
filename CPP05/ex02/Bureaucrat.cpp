@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:19:46 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:09:41 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:44:00 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,18 @@ void	Bureaucrat::decrementGrade(void)
 	}
 }
 
-void Bureaucrat::signForm(Form * Form)
+void Bureaucrat::signForm(Form & Form)
 {
-	if (Form->getSignStatus() == true)
-		std::cout << this->_name << " signed " << Form->getName() << std::endl;
-	else if (Form->getGradeSign() > this->_grade)
+	if (Form.getSignStatus() == true)
+		std::cout << this->_name << " signed " << Form.getName() << std::endl;
+	else if (Form.getGradeSign() > this->_grade)
 	{
-		Form->setSigned(true);
-		std::cout << this->_name << " signed " << Form->getName() << std::endl;
+		Form.setSigned(true);
+		std::cout << this->_name << " signed " << Form.getName() << std::endl;
 	}
 	else
 	{
-		std::cout << "Grade : " << Form->getGradeSign() << std::endl;
+		std::cout << "Grade : " << Form.getGradeSign() << std::endl;
 		throw GradeTooHighException ();
 	}
 }

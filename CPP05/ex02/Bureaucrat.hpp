@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 00:19:13 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/14 23:57:33 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:35:58 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Bureaucrat
 		std::string getName(void) const;
 		int	getGrade(void) const;
 		void setGrade(int size);
-		void	signForm(Form * Form);
+		void	signForm(Form & Form);
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 		void	execute(Form const &Form) const;

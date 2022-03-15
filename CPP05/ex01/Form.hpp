@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 03:00:27 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/15 00:41:23 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:31:38 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
+
 class Form
 {
 	private:
