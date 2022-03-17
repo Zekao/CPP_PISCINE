@@ -11,18 +11,17 @@
 /* ************************************************************************** */
 
 #include "Convert.hpp"
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	std::string str;
 
-	std::getline(std::cin, str);
-	// std::cout << "======TEST VALUE=======" << std::endl;
-	// std::cout << " Int : " << checkInt(str) << std::endl;
-	// std::cout << " Char : " << checkChar(str) << std::endl;
-	// std::cout << " Float : " << checkFloat(str) << std::endl;
-	// std::cout << " Double : " << checkDouble(str) << std::endl;
+	if (argc != 2)
+	{
+		std::cout << "\033[1;31m invalid usage, please test with : [./convert {argument}] \033[m" << std::endl;
+		return (1);
+	}
+	std::string str;
+	str = argv[1];
 	if (checkException(str) == true)
 		isExcept(str);
 	 if (checkChar(str) == true)
@@ -32,5 +31,8 @@ int	main(void)
 	else if (checkFloat(str) == true)
 		isFloat(str);
 	else if (checkDouble(str) == true)
-		isDouble(str); 
+		isDouble(str);
+	else
+		std::cout << "\033[1;31m Invalid input, please enter a char or an int or a float or a double. \033[m" << std::endl;
+	return (0);
 }

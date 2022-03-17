@@ -103,7 +103,7 @@ bool checkDouble(std::string str)
 
 bool	checkException(std::string str)
 {
-	if (str == "nan" || str == "nanf" || str == "inf" || str == "-inf")
+	if (str == "nan" || str == "nanf" || str == "inf" || str == "inff" || str == "-inf")
 		return (true);
 	return (false);
 }
@@ -116,7 +116,9 @@ bool	checkException(std::string str)
 
 void	isChar(std::string const str)
 {
-	double c = strtod(str.c_str(), NULL);
+	char c = str[0];
+	if (c >= '0' && c <= '9')
+		c -= 48;
 	if (static_cast<int>(c) < 32 || static_cast<int>(c) > 126)
 	{
 		std::cout << "char: non displayable" << std::endl;
@@ -154,7 +156,10 @@ void	isFloat(std::string const str)
 	else 
 		std::cout << "char: '" << static_cast<char>(res) << "'" <<  std::endl;
 	std::cout << "int: " << static_cast<int>(res) << std::endl;
-	std::cout << "float: " << static_cast<float>(res) << "f" << std::endl;
+	if (str[str.length() - 2] == '.')
+		std::cout << "float: " << static_cast<float>(res) << ".0f" << std::endl;
+	else 
+		std::cout << "float: " << str << std::endl;
 	std::cout << "double: " << static_cast<double>(res) << std::endl;
 }
 
