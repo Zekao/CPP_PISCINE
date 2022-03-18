@@ -18,6 +18,27 @@
 /**                                                        **/
 /************************************************************/
 
+
+int		ft_point(std::string str)
+{
+	int	i = 0;
+	int	j = 0;
+
+	while (str[i])
+	{
+		if (str[i] == '.')
+			break;
+		i++;
+	}
+	if (str[i] != '.')
+		return (0);
+	while (str[i])
+	{
+		i++;
+		j++;
+	}
+	return (j);
+}
 bool	checkChar(std::string str)
 {
 	if (str.length() != 1)
@@ -125,8 +146,9 @@ void	isChar(std::string const str)
 	}
 	else 
 		std::cout << "char: '" << static_cast<char>(c) << "'" <<  std::endl;
+	std::cout.precision(15);
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
-	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" <<  std::endl;
 }
 
@@ -155,11 +177,9 @@ void	isFloat(std::string const str)
 	}
 	else 
 		std::cout << "char: '" << static_cast<char>(res) << "'" <<  std::endl;
+	std::cout.precision(ft_point(str));
 	std::cout << "int: " << static_cast<int>(res) << std::endl;
-	if (str[str.length() - 2] == '.')
-		std::cout << "float: " << static_cast<float>(res) << ".0f" << std::endl;
-	else 
-		std::cout << "float: " << str << std::endl;
+	std::cout << "float: " << static_cast<float>(res) << "f" <<std::endl;
 	std::cout << "double: " << static_cast<double>(res) << std::endl;
 }
 
@@ -173,6 +193,7 @@ void	isDouble(std::string const str)
 	}
 	else 
 		std::cout << "char: '" << static_cast<char>(res) << "'" <<  std::endl;
+	std::cout.precision(ft_point(str));
 	std::cout << "int: " << static_cast<int>(res) << std::endl;
 	std::cout << "float: " << static_cast<float>(res) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(res) << std::endl;

@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cstring>
 # include <cstdlib>
-# include "limits.h"
+# include <limits.h>
 
 bool		checkChar(std::string str);
 bool		checkInt(std::string str);
