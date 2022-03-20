@@ -6,11 +6,11 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 03:21:58 by emaugale          #+#    #+#              #
-#    Updated: 2022/03/18 19:22:52 by emaugale         ###   ########.fr        #
+#    Updated: 2022/03/20 19:41:55 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	Iter
+NAME 		=	Array
 
 SRCS 		=	main.cpp			\
 
@@ -20,7 +20,7 @@ INCLUDE		= 		include
 AR		=		#ar rcs
 RM		=		rm -f
 CC		=		c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g
 
 %.o:				%.cpp
 	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@ -I $(INCLUDE)
