@@ -1,53 +1,56 @@
 #include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
+    std::cout << "Creating an empty array" << std::endl;
+    Array<int> Test;
+    std::cout << "Creating an array with content" << std::endl;
+    Array<int> Test2(MAX_VAL);
+    std::cout << "Size of test2 : " << Test2.getSize() << std::endl;
+    std::cout << "Trying to modify element of the array at index -2" << std::endl;
     try
     {
-        numbers[-2] = 0;
+        Test2[-2] = 0;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "\033[1;31m===========EXCEPTION==============" << std::endl;
+        std::cerr << e.what() << std::endl;
+        std::cout << "===========EXCEPTION==============\033[m" << std::endl;
     }
+    std::cout << "Trying to modify element of the array at max + 1" << std::endl;
     try
     {
-        numbers[MAX_VAL] = 0;
+        Test2[MAX_VAL] = 0;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "\033[1;31m===========EXCEPTION==============" << std::endl;
+        std::cerr << e.what() << std::endl;
+        std::cout << "===========EXCEPTION==============\033[m" << std::endl;
     }
-
+    std::cout << "Changing all values with random values\033[1;34m" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
-        numbers[i] = rand();
+        Test2[i] = rand();
+        std::cout << "Test2[" << i << "] : " << Test2[i] << std::endl;
     }
-    delete [] mirror;//
+    std::cout << "\033[m";
+    std::cout << "Trying to access an unexisting value : " << std::endl;
+    try
+    {
+        std::cout << Test2[2] << std::endl;
+        std::cout << Test2[4] << std::endl;
+        std::cout << Test2[6] << std::endl;
+        std::cout << Test2[12] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "\033[1;31m===========EXCEPTION==============" << std::endl;
+        std::cerr << e.what() << std::endl;
+        std::cout << "===========EXCEPTION==============\033[m" << std::endl;
+    }
     return 0;
 }

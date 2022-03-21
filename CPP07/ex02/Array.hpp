@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 22:44:57 by emaugale          #+#    #+#             */
-/*   Updated: 2022/03/20 20:47:26 by emaugale         ###   ########.fr       */
+/*   Updated: 2022/03/20 23:03:07 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Array
 		};
 		Array<T>(void)
 		{
+			std::cout << "Default constructor called" << std::endl;
 			this->_array = NULL;
 			this->_size = 0;
 		};
